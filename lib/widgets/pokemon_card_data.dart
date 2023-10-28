@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_pokemon/models/pokemon.dart';
-import 'package:quiz_pokemon/utils/string_extension.dart';
 
 class PokemonCardData extends StatelessWidget {
   const PokemonCardData({required this.pokemon, Key? key}) : super(key: key);

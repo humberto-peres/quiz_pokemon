@@ -13,4 +13,8 @@ class Pokemon {
   factory Pokemon.fromJson(Map<String, dynamic> jsonData) {
     return Pokemon(name: jsonData['name'], url: jsonData['url'], id: Random().nextInt(150) + 1);
   }
+
+  get wrongAnswers => null;
+
+
 }

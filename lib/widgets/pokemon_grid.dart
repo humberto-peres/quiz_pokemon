@@ -16,110 +16,104 @@ class _PokemonGridState extends State<PokemonGrid> {
     var pokemonList = widget.pokemonList;
 
     return Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Expanded(
           child: GridView.count(
-            padding: const EdgeInsets.all(7),
-            crossAxisCount: 1, // Defina 1 para listar apenas um Pokémon
+            crossAxisCount: 1,
             crossAxisSpacing: 4,
             mainAxisSpacing: 4,
             semanticChildCount: pokemonList.length,
-            childAspectRatio: 200 / 244,
             physics: const BouncingScrollPhysics(),
             children: [
-              if (pokemonList.isNotEmpty)
-                PokemonCard(pokemon: pokemonList[0]),
+              if (pokemonList.isNotEmpty) PokemonCard(pokemon: pokemonList[0]),
             ],
           ),
         ),
+        SizedBox(height: 20), // Espaço entre a imagem e os botões
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-              ),
-              onPressed: () {
-                /*setState(() {
-                  stateMachine.nextState(1);
-                });*/
-              },
-              child: Text(
-                "teste",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: EdgeInsets.all(20),
+                  ),
+                  onPressed: () {
+                    // Adicione a lógica desejada para o primeiro botão aqui
+                  },
+                  child: const Text(
+                    "Botão 1",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-              ),
-              onPressed: () {
-                /*setState(() {
-                  stateMachine.nextState(1);
-                });*/
-              },
-              child: Text(
-                "teste",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: EdgeInsets.all(20),
+                  ),
+                  onPressed: () {
+                    // Adicione a lógica desejada para o segundo botão aqui
+                  },
+                  child: const Text(
+                    "Botão 2",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-              ),
-              onPressed: () {
-                /*setState(() {
-                  stateMachine.nextState(1);
-                });*/
-              },
-              child: Text(
-                "teste",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: EdgeInsets.all(20),
+                  ),
+                  onPressed: () {
+                    // Adicione a lógica desejada para o terceiro botão aqui
+                  },
+                  child: const Text(
+                    "Botão 3",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: TextButton(
-              style: TextButton.styleFrom(
-                backgroundColor: Colors.blue,
-              ),
-              onPressed: () {
-                /*setState(() {
-                  stateMachine.nextState(1);
-                });*/
-              },
-              child: Text(
-                "teste",
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 20.0,
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: TextButton(
+                  style: TextButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    padding: EdgeInsets.all(20),
+                  ),
+                  onPressed: () {
+                    // Adicione a lógica desejada para o quarto botão aqui
+                  },
+                  child: const Text(
+                    "Botão 4",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20.0,
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
         ),
       ],
