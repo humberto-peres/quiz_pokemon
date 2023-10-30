@@ -14,11 +14,27 @@ class _PokemonGridState extends State<PokemonGrid> {
   @override
   Widget build(BuildContext context) {
     var pokemonList = widget.pokemonList;
+    int pontuacao = 0;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+         Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(2.0),
+              child: Text(
+                'Certos: $pontuacao',
+                style: const TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ],
+        ),
         Expanded(
           child: GridView.count(
             crossAxisCount: 1,
@@ -48,7 +64,7 @@ class _PokemonGridState extends State<PokemonGrid> {
                     // Adicione a lógica desejada para o primeiro botão aqui
                   },
                   child: const Text(
-                    "Botão 1",
+                    "Zapdos",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -67,7 +83,7 @@ class _PokemonGridState extends State<PokemonGrid> {
                     // Adicione a lógica desejada para o segundo botão aqui
                   },
                   child: const Text(
-                    "Botão 2",
+                    "Articuno",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -86,7 +102,7 @@ class _PokemonGridState extends State<PokemonGrid> {
                     // Adicione a lógica desejada para o terceiro botão aqui
                   },
                   child: const Text(
-                    "Botão 3",
+                    "Mewtwo",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
@@ -105,7 +121,7 @@ class _PokemonGridState extends State<PokemonGrid> {
                     // Adicione a lógica desejada para o quarto botão aqui
                   },
                   child: const Text(
-                    "Botão 4",
+                    "Dodrio",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,

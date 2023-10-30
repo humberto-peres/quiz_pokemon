@@ -29,16 +29,26 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   @override
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Pokedex'),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text('Quiz pokemon'),
+        ),
+        body: FutureBuilder(
+          future: PokeAPI.getPokemonList(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return PokemonGrid(pokemonList: snapshot.data!);
+            } else {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          },
+        ),
       ),
-      body: pokemonList == true
-          ? const Center(child: CircularProgressIndicator())
-          : PokemonGrid(
-              pokemonList:
-                  pokemonList), // Exiba o quiz com a lista de Pokémon carregada
     );
   }
 }
